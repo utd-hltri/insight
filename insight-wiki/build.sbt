@@ -1,5 +1,7 @@
 name := "insight-wiki"
 
+organization := "edu.utdallas.hltri"
+
 version := "1.0.1"
 
 publishTo := sonatypePublishTo.value
