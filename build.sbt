@@ -2,13 +2,15 @@ name := "insight"
 
 organization := "edu.utdallas.hltri"
 
-version := "1.0.0"
+version := "1.0.1"
 
 publishTo := sonatypePublishTo.value
 
 lazy val commonSettings = Seq(
   // Use latest scala version
   scalaVersion := "2.10.4",
+  // do not append scala version to the generated artifacts
+  crossPaths := false,
   // Connects STDIN to sbt during forked runs
   connectInput in run := true,
   // Get rid of output prefix
@@ -26,10 +28,7 @@ lazy val commonSettings = Seq(
 )
 
 lazy val insight = (project in file("."))
-  .aggregate(`insight-ollie`, `insight-wiki`)
-  .settings(commonSettings)
-
-lazy val `insight-ollie` = (project in file("insight-ollie"))
+  .aggregate(`insight-wiki`)
   .settings(commonSettings)
 
 lazy val `insight-wiki` = (project in file("insight-wiki"))

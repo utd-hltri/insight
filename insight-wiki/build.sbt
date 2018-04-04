@@ -1,7 +1,8 @@
 name := "insight-wiki"
 
-version := "1.0.0"
+version := "1.0.1"
 
+publishTo := sonatypePublishTo.value
 
 // enable publishing to maven
 publishMavenStyle := true
