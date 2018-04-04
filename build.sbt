@@ -2,11 +2,9 @@ name := "insight"
 
 organization := "edu.utdallas.hltri"
 
-version := "1.0.1"
-
-publishTo := sonatypePublishTo.value
-
 lazy val commonSettings = Seq(
+  version := "1.0.1",
+  publishTo := sonatypePublishTo.value,
   // Use latest scala version
   scalaVersion := "2.10.4",
   // do not append scala version to the generated artifacts
@@ -23,6 +21,8 @@ lazy val commonSettings = Seq(
   javacOptions ++= Seq("-source", "1.8", "-target", "1.8", "-Xlint:unchecked"),
   // Always export a .jar rather than .class files
   exportJars := true,
+  // do not add scala libraries as a dependency
+  autoScalaLibrary := false,
   // hltri util
   libraryDependencies += "edu.utdallas.hltri" % "hltri-util" % "1.0.1"
 )
